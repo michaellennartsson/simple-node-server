@@ -2,6 +2,8 @@ const express = require('express');
 
 var app = express();
 
+const port = process.env.port || 3000;
+
 app.use((req, res, next) => {
   var time = new Date().toString();
   console.log(time);
@@ -12,6 +14,6 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.listen(3000, () => {
-  console.log('Running on port 3000');
+app.listen(port, () => {
+  console.log('Running on port ' + port);
 });
