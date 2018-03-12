@@ -2,7 +2,7 @@ const express = require('express');
 
 var app = express();
 
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 
 app.use((req, res, next) => {
   var time = new Date().toString();
@@ -13,6 +13,8 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
+
+
 
 app.listen(port, () => {
   console.log('Running on port ' + port);
